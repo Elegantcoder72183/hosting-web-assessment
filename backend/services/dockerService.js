@@ -1,52 +1,15 @@
-const { exec } = require("child_process");
+const logger = require("../utils/logger");
 
+const runDockerContainer = async (clientName, image) => {
+  logger(`Simulating Docker deployment for ${clientName}`);
 
-const runDockerContainer = (image, clientName) => {
+  await new Promise((resolve) => setTimeout(resolve, 4000));
 
-  return new Promise((resolve, reject) => {
-
-    // Unique Container Name
-    const uniqueId = Date.now();
-
-    const containerName =
-      `${clientName.toLowerCase()}-${uniqueId}`;
-
-    // Docker command
-    const command =
-      `docker run -d --rm --name ${containerName} ${image}`;
-
-    console.log("Running Command:");
-    console.log(command);
-
-    exec(command, (error, stdout, stderr) => {
-
-      if (error) {
-
-        console.log("Docker Error:");
-        console.log(error);
-
-        return reject(error.message);
-      }
-
-      if (stderr) {
-
-        console.log("Docker STDERR:");
-        console.log(stderr);
-
-        return reject(stderr);
-      }
-
-      console.log("Docker STDOUT:");
-      console.log(stdout);
-
-      resolve({
-        containerName,
-        containerId: stdout.trim(),
-      });
-    });  
-  });
+  return {
+    success: true,
+    containerId: "simulated-container",
+  };
 };
-
 
 module.exports = {
   runDockerContainer,
