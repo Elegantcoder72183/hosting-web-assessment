@@ -1,0 +1,90 @@
+# ==========================================
+# Global & OS Garbage
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# ==========================================
+# Backend Specific
+# ==========================================
+# Dependencies
+backend/node_modules/
+backend/jspm_packages/
+backend/web_modules/
+
+# Python (if backend is Django/FastAPI/Flask)
+backend/__pycache__/
+backend/*.py[cod]
+backend/*$py.class
+backend/.venv/
+backend/env/
+backend/venv/
+
+# Java/Maven/Gradle (if applicable)
+backend/target/
+backend/.gradle/
+backend/build/
+
+# Backend Logs & Runtime
+backend/logs/
+backend/*.log
+backend/npm-debug.log*
+backend/yarn-debug.log*
+backend/yarn-error.log*
+backend/pnpm-debug.log*
+
+# ==========================================
+# Frontend Specific
+# ==========================================
+# Dependencies
+frontend/node_modules/
+frontend/jspm_packages/
+frontend/web_modules/
+
+# Production Builds
+frontend/dist/
+frontend/build/
+frontend/.next/
+frontend/.nuxt/
+frontend/out/
+
+# Frontend Logs & Runtime
+frontend/logs/
+frontend/*.log
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# ==========================================
+# Environment Secrets & Local Configs (CRITICAL)
+# ==========================================
+# Never commit your actual api keys or database passwords!
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+backend/.env
+backend/.env.*
+frontend/.env
+frontend/.env.*
+
+# ==========================================
+# IDEs and Editors
+# ==========================================
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
