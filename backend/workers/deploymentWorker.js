@@ -28,7 +28,7 @@ const worker = new Worker(
       logger("Running Docker Container");
 
       // Run Docker
-      await runDockerContainer(deployment.image, deployment.clientName);
+      await runDockerContainer(deployment.clientName, deployment.image);
 
       logger("Docker Container Started");
 
